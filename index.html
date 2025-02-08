@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://cdn.pixabay.com/photo/2017/09/01/00/15/png-2702691_1280.png" alt="Heart Icon" class="heart-icon">
+            <h1>Destiny Matcher</h1>
+            <p>Discover your relationship status with the FLAMES !!</p>
+        </div>
+        <div class="input-group">
+            <label for="name1"><i class="fas fa-user"></i> Your Name:</label>
+            <input type="text" id="name1" placeholder="Enter your name">
+        </div>
+        <div class="input-group">
+            <label for="name2"><i class="fas fa-heart"></i> Partner's Name:</label>
+            <input type="text" id="name2" placeholder="Enter partner's name">
+        </div>
+        <button id="calculate" class="btn-primary">Calculate</button>
+        <div id="result-container">
+            <div id="result" class="result"></div>
+        </div>
+        <button id="download-image" class="btn-secondary" style="display: none;">
+            <i class="fas fa-download"></i> Download Image
+        </button>
+        <button id="share-image" class="btn-secondary" style="display: none;">
+            <i class="fas fa-share"></i> Share Image
+        </button>
+        <button id="reload" class="reload-btn" title="Reset"><i class="fas fa-sync-alt"></i></button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
