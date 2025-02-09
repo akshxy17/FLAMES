@@ -14,6 +14,11 @@ document.getElementById('calculate').addEventListener('click', function () {
     // Show the Download and Share buttons
     document.getElementById('download-image').style.display = 'block';
     document.getElementById('share-image').style.display = 'block';
+
+    // Trigger heart animation if the result is "Lovers"
+    if (result === "Lovers") {
+        createHearts();
+    }
 });
 
 document.getElementById('reload').addEventListener('click', function () {
@@ -23,10 +28,12 @@ document.getElementById('reload').addEventListener('click', function () {
     document.getElementById('result').innerText = '';
     document.getElementById('download-image').style.display = 'none';
     document.getElementById('share-image').style.display = 'none';
+    
+    // Clear the hearts
+    document.getElementById('heart-container').innerHTML = '';
 });
 
 document.getElementById('download-image').addEventListener('click', function () {
-    // Convert the result container to an image
     html2canvas(document.querySelector("#result-container")).then(canvas => {
         const link = document.createElement('a');
         link.download = 'flames-result.png';
@@ -36,13 +43,11 @@ document.getElementById('download-image').addEventListener('click', function () 
 });
 
 document.getElementById('share-image').addEventListener('click', function () {
-    // Convert the result container to an image
     html2canvas(document.querySelector("#result-container")).then(canvas => {
         canvas.toBlob(function (blob) {
             const file = new File([blob], 'flames-result.png', { type: 'image/png' });
 
             if (navigator.share) {
-                // Use Web Share API to share the image
                 navigator.share({
                     files: [file],
                     title: 'FLAMES Result',
@@ -69,7 +74,22 @@ function calculateFlames(name1, name2) {
     const totalLength = name1.length + name2.length;
     const flames = ["Friends", "Lovers", "Affectionate", "Marriage", "Enemies", "Siblings"];
 
-    // Calculate the index
     const index = totalLength % flames.length;
     return index === 0 ? flames[flames.length - 1] : flames[index - 1];
+}
+
+// Heart Animation Function
+function createHearts() {
+    const heartContainer = document.getElementById('heart-container');
+    heartContainer.innerHTML = ''; // Clear previous hearts
+
+    for (let i = 0; i < 50; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '❤️';
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+        heartContainer.appendChild(heart);
+    }
 }
