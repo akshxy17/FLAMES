@@ -1,6 +1,6 @@
 # 🔥 FLAMES Calculator 🔥
 
-A fun and interactive **FLAMES Calculator** that predicts the relationship between two people based on their names. Built with a **Java backend**, **MySQL database**, and **HTML/CSS/JavaScript** frontend.
+A fun and interactive **FLAMES Calculator** that predicts the relationship between two people based on their names. Built with a **HTML/CSS/JavaScript** frontend.
 
 ---
 
