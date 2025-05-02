@@ -25,13 +25,6 @@ This project allows users to input two names and calculates the FLAMES result ba
 - CSS
 - JavaScript
 
-### 🧠 Backend
-- Java
-- Spring Boot (if applicable)
-
-### 🗃 Database
-- MySQL
-
 ---
 
 ## 📌 Features
@@ -39,7 +32,6 @@ This project allows users to input two names and calculates the FLAMES result ba
 - 🔤 Input form for entering two names
 - 🧮 FLAMES logic calculation using Java
 - 💬 Displays the result with a dynamic message
-- 🗃 Stores calculation history in MySQL
 - 🌐 Clean and responsive UI
 
 ---
